@@ -5,12 +5,12 @@ Test worker Docker container with ffmpeg and node
 
 You can build the container using the following:
 ```{bash}
-TEST_CONTAINER_VERSION=`cat VERSION` docker-compose build
+$ TEST_CONTAINER_VERSION=`cat VERSION` docker-compose build
 ```
 
 ## Running the container (with example output)
-```{text}
-TEST_CONTAINER_VERSION=`cat VERSION` docker-compose up
+```{bash}
+$ TEST_CONTAINER_VERSION=`cat VERSION` docker-compose up
 Creating node-ffmpeg-test-container_test_worker_1 ... done
 Attaching to node-ffmpeg-test-container_test_worker_1
 test_worker_1  | [2018-08-14-16:59:11.224+0000] Started container version 1.0.1... checking things out...
