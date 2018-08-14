@@ -1,6 +1,8 @@
 FROM node:10-stretch
 
 LABEL author="Ryan B. Harvey <ryan.b.harvey@gmail.com>"
+ARG VERSION
+LABEL version=$VERSION
 
 # Install ffmpeg
 RUN apt-get update && \
@@ -14,12 +16,10 @@ RUN ffmpeg -buildconf
 RUN node -v
 RUN npm -v
 
-# Install gnomon
-RUN npm install -g gnomon
-
 # Copy script
 WORKDIR /home/node
 COPY start.sh .
+COPY VERSION .
 RUN chown -R node:node .
 RUN chmod +x ./start.sh
 

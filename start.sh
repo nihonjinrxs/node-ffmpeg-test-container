@@ -1,6 +1,6 @@
 #!/bin/bash
 DATE_FORMAT="%Y-%m-%d-%H:%M:%S.%3N%z"
-echo "[$(date +$DATE_FORMAT)] Started container... checking things out..."
+echo "[$(date +$DATE_FORMAT)] Started container version $(cat ./VERSION)... checking things out..."
 
 ffmpeg -buildconf
 node -v
