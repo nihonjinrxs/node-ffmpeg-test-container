@@ -2,4 +2,8 @@ version: '2'
 
 services:
   test_worker:
-    build: '.'
+    build: 
+      context: '.'
+      args:
+        TEST_CONTAINER_VERSION: "${TEST_CONTAINER_VERSION}"
+    image: "node_ffmpeg_test_worker:${TEST_CONTAINER_VERSION}"

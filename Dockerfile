@@ -1,9 +1,6 @@
 FROM node:10-stretch
 
 LABEL author="Ryan B. Harvey <ryan.b.harvey@gmail.com>"
-ARG VERSION
-LABEL version=$VERSION
-
 # Install ffmpeg
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -22,5 +19,8 @@ COPY start.sh .
 COPY VERSION .
 RUN chown -R node:node .
 RUN chmod +x ./start.sh
+
+ARG TEST_CONTAINER_VERSION
+LABEL version=$TEST_CONTAINER_VERSION
 
 CMD "./start.sh"
